@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container" style="display: flex;height:100px ;align-items: center; justify-content: center;">
+        <button class="btn" type="button"
+            style="background-color: aquamarine;padding: 5px;border-radius: 5%; border: none;">
+            CLick Me
+        </button>
+    </div>
+
+    <div class="container" style="  display: flex;height:100px ;align-items: center; justify-content: center;">
+        <input class="input" type="text" style="margin: 5px;">
+        <div class="text">Hello</div>
+    </div>
+
+    <div class="container" style="height:100px ;align-items: center; justify-content: center;">
+        <form action="">
+            Name:<input type="text" id="name">
+            <select name="" id="select">
+                <option value="India">India</option>
+                <option value="France">France</option>
+            </select>
+            <button type="submit">submit</button>
+        </form>
+        <br>
+        <div class="msg">Message:</div>
+        <div class="x">Name:</div>
+        <div class="y">Country</div>
+
+        <br>
+
+        <button class="move">Animation</button>
+    </div>
+    <script>
+        $(document).ready(function () {
+            // Mouse events
+            $(".btn").mouseenter(function () {
+                $(this).text("Entered");
+            });
+
+            $(".btn").mouseleave(function () {
+                $(this).text("Left");
+            });
+
+            $(".btn").mousedown(function () {
+                $(this).text("Pressed");
+            });
+
+            $(".btn").mouseup(function () {
+                $(this).text("Relesed");
+            });
+
+            $(".btn").dblclick(function () {
+                $(this).text("double click");
+            });
+
+            $(".btn").click(function () {
+                $(this).text("CLick");
+            });
+
+            // Keyboard events
+            $(".input").keydown(function (event) {
+                $(".text").text(event.key);
+            });
+
+            $(".input").keyup(function (event) {
+                $(".text").text(event.key);
+            });
+
+            $(".input").keypress(function (event) {
+                $(".text").text(event.key);
+            });
+            // Form events
+            $("#name").focus(function () {
+                $(".msg").text("Focus");
+            });
+
+            $("#name").blur(function () {
+                $(".msg").text("Blur");
+            });
+
+            $("select").change(function () {
+                $(".msg").text("change" + $(this).val());
+            });
+
+            $("form").submit(function (event) {
+                event.preventDefault();
+                $(".x").text("change" + $("input").val());
+            });
+
+            // Window
+            $(window).on("load", function () {
+                alert(" Load ");
+            });
+            $(window).resize(function () {
+                alert(" Load " + $(window).height());
+            });
+
+            $(window).scroll(function () {
+                alert(" Scorll " + $(window).height());
+            });
+
+            $(window).on("unload", function () {
+                alert(" Load " + $(window).height());
+            });
+
+            // animation
+            $(".move").click(function () {
+                $(".y").animate(
+                    {
+                        right: "+=150px"
+                    },
+                    1000
+                );
+            });
+        });
+    </script>
+</body>
+
+</html>

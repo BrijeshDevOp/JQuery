@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <table border="1">
+            <thead>
+                <tr>
+                    <td>Name</td>
+                    <td>Age</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Brijesh</td>
+                    <td>22</td>
+                </tr>
+                <tr>
+                    <td>Chandan</td>
+                    <td>23</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <button class="btn1">b1</button>
+        <button class="btn2">b2</button>
+        <button id="btn3">b3</button>
+        <button class="btn4">b4</button>
+        <button class="btn5">b5</button>
+        <button class="btn6">b6</button>
+        <input type="button" value="Click">
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            // element  and * 
+            $("input").click(function () {
+                $("*").hide();
+            });
+            // class
+            $(".btn2").click(function () {
+                $("table").css("background-color", "yellow");
+            });
+            //  id selector
+            $("#btn3").click(function () {
+                $("table").hide();
+            });
+
+            // first
+            $(".btn4").click(function () {
+                $("thead:first").css("background-color", "green");
+            });
+
+            // first
+            $(".btn5").click(function () {
+                $("tbody:last").css("background-color", "green");
+            });
+
+            // even and odd
+            $(".btn6").click(function () {
+                $("tr:even").css("background-color", "pink");
+                $("tr:odd").css("background-color", "blue");
+            });
+        });
+    </script>
+</body>
+
+</html>

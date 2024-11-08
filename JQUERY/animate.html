@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Animation Example</title>
+    <script src="js/jquery.js"></script>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+
+        .controls {
+            margin-top: 200px;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box"></div>
+    <div class="controls">
+        <button id="moveRight">Move Right</button>
+        <button id="moveDown">Move Down</button>
+        <button id="resize">Resize</button>
+        <button id="reset">Reset</button>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            // Move Right Animation
+            $("#moveRight").click(function () {
+                $(".box").animate({
+                    left: "+=150px"
+                }, 1000); // Move 150px to the right in 1 second
+            });
+
+            // Move Down Animation
+            $("#moveDown").click(function () {
+                $(".box").animate({
+                    top: "+=150px"
+                }, 1000); // Move 150px down in 1 second
+            });
+
+            // Resize Animation
+            $("#resize").click(function () {
+                $(".box").animate({
+                    width: "200px",
+                    height: "200px"
+                }, 1000); // Resize to 200x200px in 1 second
+            });
+
+            // Reset Animation
+            $("#reset").click(function () {
+                $(".box").animate({
+                    top: "50px",
+                    left: "50px",
+                    width: "100px",
+                    height: "100px"
+                }, 1000); // Reset to original position and size in 1 second
+            });
+        });
+    </script>
+
+</body>
+
+</html>
